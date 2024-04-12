@@ -7,7 +7,7 @@ from base_caching import BaseCaching
 
 class LIFOCache(BaseCaching):
     '''
-    Represents an Object that allows storing and retrieving 
+    Represents an Object that allows storing and retrieving
     items from a dict with a LIFO removal mechanism when
     the limit is reached
     '''
@@ -17,7 +17,7 @@ class LIFOCache(BaseCaching):
         '''
         super().__init__()
         self.stack = []
-    
+
     def put(self, key, item):
         '''
         Adds an item in the cache
@@ -31,7 +31,7 @@ class LIFOCache(BaseCaching):
                 print("DISCARD: {}".format(discarded_key))
         self.cache_data[key] = item
         self.stack.append(key)
-    
+
     def get(self, key):
         '''
         Retries an item by key
