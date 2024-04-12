@@ -16,7 +16,7 @@ class FIFOCache(BaseCaching):
         '''
         super().__init__()
         self.queue = []
-    
+
     def put(self, key, item):
         '''
         Assigns toa dict self.cache_data the item value
